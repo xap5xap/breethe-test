@@ -35,6 +35,7 @@
     "react": "^16.4.2",
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.4.2",
+    "react-hot-loader": "^4.3.4",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
@@ -92,7 +93,7 @@
   "babel": {
     "presets": [
       "react-app"
-    ]
+    ]  
   },
   "eslintConfig": {
     "extends": "react-app"
