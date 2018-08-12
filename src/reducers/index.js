@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import catalogReducer from './catalogReducer';
+import catalog from './catalogReducer';
+import apiStatus from './apiStatusReducer';
 
 const rootReducer = combineReducers({
-  catalogReducer
+  catalog,
+  apiStatus
 });
 
 export default rootReducer;

@@ -54,7 +54,8 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
-    "redux-devtools": "^3.4.1"
+    "redux-devtools": "^3.4.1",
+    "redux-immutable-state-invariant": "^2.1.0"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -93,7 +94,7 @@
   "babel": {
     "presets": [
       "react-app"
-    ]  
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
