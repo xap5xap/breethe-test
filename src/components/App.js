@@ -2,30 +2,31 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import Course from './Course';
+import Loading from './Loading';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+`;
 
 class App extends React.Component {
-  
   render() {
     console.log('App.js - this.props', this.props);
     const IS_LOADING = this.props.apiStatus.fetching;
     return (
-      <div className="App">
-        {IS_LOADING && <div>Loading</div>}
+      <Container>
+        {IS_LOADING && <Loading />}
 
         {!IS_LOADING && (
           <div>
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <h1 className="App-title">Welcome to React</h1>
-            </header>
-            <p className="App-intro">
-              To get started, edit <code>src/App.js</code> and save to reload.
-            </p>{' '}
+            <Course />
           </div>
         )}
-      </div>
+      </Container>
     );
   }
 }
@@ -40,8 +41,7 @@ function mapStateToProps(state) {
   };
 }
 function mapDispatchToProps(dispatch) {
-  return {
-  };
+  return {};
 }
 // export default (App);
 export default connect(
