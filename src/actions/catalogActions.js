@@ -11,8 +11,8 @@ export function loadCatalogs() {
     dispatch(beginApiCall());
     return getCatalogs()
       .then(projects => {
-        dispatch(endApiCall());
         dispatch(loadCatalogsSuccess(projects));
+        dispatch(endApiCall());
       })
       .catch(error => {
         dispatch(apiCallError(error.message));
