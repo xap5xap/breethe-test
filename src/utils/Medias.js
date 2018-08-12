@@ -4,9 +4,10 @@ export function getMedia(mediasArray, id) {
 
 export function getBackground(contentMedias, medias) {
   const id = contentMedias.find(el => el.use_for === 'background').media_id;
-  console.log('id', id);
-  const res = getMedia(medias, id).url;
-  getMedia(medias, id);
-  console.log('res', res);
-  return res;
+  return getMedia(medias, id).url;
+}
+
+export function getThumbnail(contentMedias, medias) {
+  const id = contentMedias.find(el => el.use_for === 'thumbnail').media_id;
+  return getMedia(medias, id).url;
 }

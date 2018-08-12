@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getBackground } from '../utils/Medias';
+import { getThumbnail } from '../utils/Medias';
 
 const Container = styled.div`
   border: 1px solid white;
@@ -37,7 +37,7 @@ const MeditateCard = props => {
   const { content, medias } = props;
   return (
     <Container>
-      <Background image={getBackground(content.content_medias, medias)}>
+      <Background image={getThumbnail(content.content_medias, medias)}>
         <Title>{content.title}</Title>
       </Background>
       <Description>{content.description}</Description>
