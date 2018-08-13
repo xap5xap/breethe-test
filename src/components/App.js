@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import React from 'react';
 import styled from 'styled-components';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, Redirect } from 'react-router-dom';
 import Course from './Course';
 import Loading from './Loading';
+import Login from './Login';
 import Meditation from './Meditation';
 import Day from './Day';
 import * as catalogActions from '../actions/catalogActions';
@@ -18,10 +19,35 @@ const Container = styled.div`
   flex: 1;
 `;
 
+const PrivateRoute = ({ component: Component, isAuthenticated, ...rest }) => {
+  console.log('...rest',rest)
+  console.log('isAuthenticated',isAuthenticated)
+
+  return (
+    <Route
+      {...rest}
+      render={props => {
+        console.log('PrivateRoute - props', props);
+        return isAuthenticated ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/login',
+              state: { from: props.location }
+            }}
+          />
+        );
+      }}
+    />
+  );
+};
+
 class App extends React.Component {
-  
   render() {
     console.log('App.js - this.props', this.props);
+    console.log('auth.isAuthenticated', this.props.auth.token.length > 0);
+    const isAuthenticated = this.props.auth.token.length > 0;
     const IS_LOADING = this.props.apiStatus.fetching;
     return (
       <Container>
@@ -30,8 +56,13 @@ class App extends React.Component {
         {!IS_LOADING && (
           <div>
             <Route exact path="/" component={Course} />
-            <Route path="/meditation/:meditationId" component={Meditation} />
-            <Route path="/day/:dayId" component={Day} />
+            <Route exact path="/login" component={Login} />
+            <PrivateRoute
+              path="/meditation/:meditationId"
+              component={Meditation}
+              isAuthenticated={isAuthenticated}
+            />
+            <PrivateRoute path="/day/:dayId" component={Day} isAuthenticated={isAuthenticated} />
           </div>
         )}
       </Container>
@@ -45,7 +76,8 @@ App.propTypes = {
 function mapStateToProps(state) {
   return {
     catalog: state.catalog,
-    apiStatus: state.apiStatus
+    apiStatus: state.apiStatus,
+    auth: state.auth
   };
 }
 function mapDispatchToProps(dispatch) {
@@ -54,7 +86,9 @@ function mapDispatchToProps(dispatch) {
   };
 }
 // export default (App);
-export default withRouter(connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App)
+);

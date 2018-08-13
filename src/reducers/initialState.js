@@ -7,5 +7,9 @@ export default {
   apiStatus: {
     fetching: true,
     errorMessage: ''
+  },
+  auth: {
+    token: '',
+    isLogin: false
   }
 };

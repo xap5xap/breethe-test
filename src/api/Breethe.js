@@ -3,3 +3,12 @@ export function getCatalogs() {
     return response.json();
   });
 }
+
+export function authenticate(email, password) {
+  //should call api to authenticate
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      return resolve(`faketoken${email}${password}`);
+    }, 500);
+  });
+}
