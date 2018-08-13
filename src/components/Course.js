@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import MeditateCard from './MeditateCard';
+import { withRouter } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -24,8 +25,6 @@ class Course extends React.Component {
   }
 
   render() {
-    console.log('Course.js - this.state', this.state);
-    console.log('Course.js - this.props', this.props);
     const node = this.props.catalog.contents.find(node => node.discriminator_type === 'Course');
 
     return (
@@ -42,8 +41,4 @@ function mapStateToProps(state) {
     catalog: state.catalog
   };
 }
-function mapDispatchToProps(dispatch) {
-  return {};
-}
-// export default (App);
-export default connect(mapStateToProps)(Course);
+export default withRouter(connect(mapStateToProps)(Course));

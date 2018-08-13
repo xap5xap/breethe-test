@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { getThumbnail } from '../utils/Medias';
 
 const Container = styled.div`
@@ -37,10 +38,12 @@ const MeditateCard = props => {
   const { content, medias } = props;
   return (
     <Container>
-      <Background image={getThumbnail(content.content_medias, medias)}>
-        <Title>{content.title}</Title>
-      </Background>
-      <Description>{content.description}</Description>
+      <Link to={`/meditation/${content.id}`} style={{ textDecoration: 'none', color: 'white' }}>
+        <Background image={getThumbnail(content.content_medias, medias)}>
+          <Title>{content.title}</Title>
+        </Background>
+        <Description>{content.description}</Description>
+      </Link>
     </Container>
   );
 };

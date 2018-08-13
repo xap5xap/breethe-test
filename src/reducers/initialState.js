@@ -5,7 +5,7 @@ export default {
     medias: []
   },
   apiStatus: {
-    fetching: false,
+    fetching: true,
     errorMessage: ''
   }
 };
