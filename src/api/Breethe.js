@@ -9,6 +9,6 @@ export function authenticate(email, password) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       return resolve(`faketoken${email}${password}`);
-    }, 500);
+    }, 100);
   });
 }

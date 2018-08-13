@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import Card from './Card';
 import { withRouter } from 'react-router-dom';
 import { getBackground } from '../utils/Medias';
 
@@ -56,13 +55,9 @@ class Day extends React.Component {
   }
 
   render() {
-    console.log('Day.js - this.props', this.props);
-
     const node = this.props.catalog.contents.find(
       node => node.id === Number.parseInt(this.props.match.params.dayId, 10)
     );
-    console.log('Day.js - node', node);
-
     return (
       <Container image={getBackground(node.content_medias, this.props.catalog.medias)}>
         <h2>{node.title}</h2>

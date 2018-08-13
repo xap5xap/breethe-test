@@ -8,16 +8,40 @@ import * as authActions from '../actions/authActions';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-top: 1.5em;
+`;
+
+const Button = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  border-radius: 3px;
+  padding: 0.5rem 0;
+  margin: 2.5rem 1rem;
+  border: 2px solid white;
+  background: white;
+  color: black;
+`;
+
+const Input = styled.input`
+  margin-bottom: 1.5em;
+  margin-top: 0.8em;
+  height: 30px;
 `;
 
 class Login extends React.Component {
   render() {
-    console.log('Login.js - this.props', this.props);
-
     const { from } = this.props.location.state || { from: { pathname: '/' } };
     const redirectToReferrer = this.props.auth.token.length > 0;
-
-    console.log('Login.js - from', from);
 
     if (redirectToReferrer) {
       return <Redirect to={from} />;
@@ -25,7 +49,15 @@ class Login extends React.Component {
 
     return (
       <Container>
-        <div onClick={this.onLogin.bind(this)}>Holaa</div>
+        <h2>Welcome to Breethe</h2>
+        <p>Please login. Use whatever email and password. Doesn't matter :)</p>
+        <FormContainer>
+          <div>Email:</div>
+          <Input type="text" />
+          <div>Password:</div>
+          <Input type="password" />
+        </FormContainer>
+        <Button onClick={this.onLogin.bind(this)}>Login</Button>
       </Container>
     );
   }

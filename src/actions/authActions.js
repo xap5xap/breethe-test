@@ -18,7 +18,6 @@ export function login(email, password) {
     dispatch(loginBegin());
     return authenticate(email, password)
       .then(token => {
-          console.log('token',token)
         dispatch(loginSuccess(token));
       })
       .catch(error => {

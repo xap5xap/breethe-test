@@ -20,14 +20,10 @@ const Container = styled.div`
 `;
 
 const PrivateRoute = ({ component: Component, isAuthenticated, ...rest }) => {
-  console.log('...rest',rest)
-  console.log('isAuthenticated',isAuthenticated)
-
   return (
     <Route
       {...rest}
       render={props => {
-        console.log('PrivateRoute - props', props);
         return isAuthenticated ? (
           <Component {...props} />
         ) : (
@@ -45,8 +41,6 @@ const PrivateRoute = ({ component: Component, isAuthenticated, ...rest }) => {
 
 class App extends React.Component {
   render() {
-    console.log('App.js - this.props', this.props);
-    console.log('auth.isAuthenticated', this.props.auth.token.length > 0);
     const isAuthenticated = this.props.auth.token.length > 0;
     const IS_LOADING = this.props.apiStatus.fetching;
     return (

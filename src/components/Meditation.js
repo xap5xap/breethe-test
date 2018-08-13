@@ -25,15 +25,9 @@ class Meditation extends React.Component {
   }
 
   render() {
-    console.log('Meditation.js - this.props', this.props);
-    console.log(
-      'Meditation.js - this.props.match.params.meditationId',
-      this.props.match.params.meditationId
-    );
     const node = this.props.catalog.contents.find(
       node => node.id === Number.parseInt(this.props.match.params.meditationId, 10)
     );
-    console.log('Meditation.js - node', node);
 
     return (
       <Container>

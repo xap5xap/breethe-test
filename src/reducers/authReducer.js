@@ -10,7 +10,6 @@ export default function authReducer(state = initialState.auth, action) {
       return newState;
 
     case LOGIN_SUCESS:
-    console.log('Login reduceer', action)
       newState = Object.assign({}, state);
       newState.isLogin = false;
       newState.token = action.token;
