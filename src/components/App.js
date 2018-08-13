@@ -8,6 +8,7 @@ import { Route, withRouter } from 'react-router-dom';
 import Course from './Course';
 import Loading from './Loading';
 import Meditation from './Meditation';
+import Day from './Day';
 import * as catalogActions from '../actions/catalogActions';
 
 const Container = styled.div`
@@ -30,6 +31,7 @@ class App extends React.Component {
           <div>
             <Route exact path="/" component={Course} />
             <Route path="/meditation/:meditationId" component={Meditation} />
+            <Route path="/day/:dayId" component={Day} />
           </div>
         )}
       </Container>
