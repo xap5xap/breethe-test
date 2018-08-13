@@ -25,6 +25,7 @@ const Background = styled.div`
   height: 200px;
   background-image: url(${p => p.image});
   border-radius: 5px 5px 0 0;
+  background-color: black;
   background-size: cover;
 `;
 
@@ -34,11 +35,11 @@ const Description = styled.div`
   padding: 5px;
 `;
 
-const MeditateCard = props => {
-  const { content, medias } = props;
+const Card = props => {
+  const { content, medias, linkTo } = props;
   return (
     <Container>
-      <Link to={`/meditation/${content.id}`} style={{ textDecoration: 'none', color: 'white' }}>
+      <Link to={`/${linkTo}/${content.id}`} style={{ textDecoration: 'none', color: 'white' }}>
         <Background image={getThumbnail(content.content_medias, medias)}>
           <Title>{content.title}</Title>
         </Background>
@@ -47,4 +48,4 @@ const MeditateCard = props => {
     </Container>
   );
 };
-export default MeditateCard;
+export default Card;

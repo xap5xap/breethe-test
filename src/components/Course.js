@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import MeditateCard from './MeditateCard';
+import Card from './Card';
 import { withRouter } from 'react-router-dom';
 
 const Container = styled.div`
@@ -20,7 +20,7 @@ class Course extends React.Component {
   renderMeditationWeeks(node) {
     return node.entries.sort((a, b) => a.position - b.position).map((entry, index) => {
       const content = this.props.catalog.contents.find(element => element.id === entry.content_id);
-      return <MeditateCard key={index} content={content} medias={this.props.catalog.medias} />;
+      return <Card key={index} linkTo="meditation" content={content} medias={this.props.catalog.medias} />;
     });
   }
 
