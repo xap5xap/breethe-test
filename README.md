@@ -1,13 +1,5 @@
 # Solution to Breethe Test
 
-This is a programming test to evaluate your technical skills and your organisation skills.
-
-You must accomplish the maximum of tasks in a reasonable amount of time.
-No time limit is provided but, as any good programmer, you should try to add the most value
-in the shortess period of time.
-
-To work you must fork this repository, do seperate commit for your task, do a pull request at the end.
-
 Using this api documentation (only v5 of the API is documented here and it's currenlty being build): https://admindev.breethe.com/api-doc
 
 You can use the https://apidev.breethe.com base url instead of https://admindev.breethe.com for the api but the server will apend /api just after the domain automaticaly. So https://admindev.breethe.com/api/v5/catalogs/default would be https://apidev.breethe.com/v5/catalogs/default on the api domain.
@@ -18,8 +10,6 @@ Read this full document first.
 The task are not fully documented and we are well aware of it. 
 
 You can "sniff" https://breethe.com to check some stuff but it's using api/v4 and not api/v5 that is needed for this test.
-
-You can ask as many question as you want (this is also part of what I will evaluate) but consider that everybody is in vacation and you are on your own, you might get a answer or you might not. Also, we are a small team and we want people to enjoy there vacation so we try to avoid communication that are not critical.
 
 
 # You need to
