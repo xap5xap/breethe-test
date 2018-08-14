@@ -27,7 +27,6 @@ You can "sniff" https://breethe.com to check some stuff but it's using api/v4 an
 
 You can ask as many question as you want (this is also part of what I will evaluate) but consider that everybody is in vacation and you are on your own, you might get a answer or you might not. Also, we are a small team and we want people to enjoy there vacation so we try to avoid communication that are not critical.
 
-If you have any question send a mail to martin@breethe.com
 
 # You need to
 
