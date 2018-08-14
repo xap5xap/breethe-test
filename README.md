@@ -12,12 +12,6 @@ Using this api documentation (only v5 of the API is documented here and it's cur
 
 You can use the https://apidev.breethe.com base url instead of https://admindev.breethe.com for the api but the server will apend /api just after the domain automaticaly. So https://admindev.breethe.com/api/v5/catalogs/default would be https://apidev.breethe.com/v5/catalogs/default on the api domain.
 
-### What we will check
-
-I will check everything ! We are trying to find the best ressources for the project so anything will be taking in consideration. Code quality, automation test, test coverage, speed of development, initiative, design, KISS, reusability, documentation, build tools, technologie stack, commit message, autonomy, etc.
-
-Some are nice to have (like design, since this is not why we hire you), other are mandotory (code quality).
-
 ### To do before the test
 
 Read this full document first.
